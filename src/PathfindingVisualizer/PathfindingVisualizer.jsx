@@ -254,43 +254,58 @@ export default class PathfindingVisualizer extends Component {
 
     return (
       <>
-        <button
-          className="button"
-          onClick={() => this.visualizeAlgorithm(DIJKSTRA)}
-        >
-          Visualize Dijkstra's Algorithm
-        </button>
-        <button
-          className="button"
-          onClick={() => this.visualizeAlgorithm(DEPTH_FIRST_SEARCH)}
-        >
-          Visualize Depth-First Search Algorithm
-        </button>
-        <button
-          className="button"
-          onClick={() => this.visualizeAlgorithm(BREADTH_FIRST_SEARCH)}
-        >
-          Visualize Breadth-First Search Algorithm
-        </button>
-        <button
-          className="button"
-          onClick={() => this.visualizeAlgorithm(A_STAR)}
-        >
-          Visualize A-Star Algorithm
-        </button>
-        <button
-          className="button"
-          onClick={() => this.setStartAndFinishNodes()}
-        >
-          Set Start and Finish Nodes
-        </button>
-        <button className="button" onClick={() => this.resetGrid()}>
-          Reset Visualizer
-        </button>
-
-        {this.state.isSelectingStartFinishNode && (
-          <div className="text">{this.state.helpText}</div>
-        )}
+        <div className="flex-container">
+          <div>
+            <button
+              className="button"
+              onClick={() => this.visualizeAlgorithm(DIJKSTRA)}
+            >
+              Visualize Dijkstra's Algorithm
+            </button>
+          </div>
+          <div>
+            <button
+              className="button"
+              onClick={() => this.visualizeAlgorithm(DEPTH_FIRST_SEARCH)}
+            >
+              Visualize Depth-First Search Algorithm
+            </button>
+          </div>
+          <div>
+            <button
+              className="button"
+              onClick={() => this.visualizeAlgorithm(BREADTH_FIRST_SEARCH)}
+            >
+              Visualize Breadth-First Search Algorithm
+            </button>
+          </div>
+          <div>
+            <button
+              className="button"
+              onClick={() => this.visualizeAlgorithm(A_STAR)}
+            >
+              Visualize A-Star Algorithm
+            </button>
+          </div>
+          <div>
+            <button
+              className="button"
+              onClick={() => this.setStartAndFinishNodes()}
+            >
+              Set Start and Finish Nodes
+            </button>
+          </div>
+          <div>
+            <button className="button" onClick={() => this.resetGrid()}>
+              Reset Visualizer
+            </button>
+          </div>
+          <div>
+            {this.state.isSelectingStartFinishNode && (
+              <div className="text">{this.state.helpText}</div>
+            )}
+          </div>
+        </div>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
